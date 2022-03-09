@@ -10,7 +10,7 @@ Scenario Outline 01 - Validar response das informações do produto inserido no 
     Refrigerantes               9.7
 
 *** Keywords ***
-### Escrita do cenário em Gherking
+### Escrita do cenário em Gherkin
 Template Scenario Outline 01 - Validar response das informações do produto inserido no jsonServer
     [ARGUMENTS]  ${NOME}  ${PRECO}
     Dado que leonardo efetuar um get na rota
