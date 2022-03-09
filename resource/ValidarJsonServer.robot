@@ -1,8 +1,6 @@
 *** Settings ***
 Library         RequestsLibrary
-Library         Collections
 Library         JsonValidator
-Library         OperatingSystem
 
 *** Variables ***
 ${URL}              http://localhost:3000
