@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20220308 22:59:05.258" rpa="false" schemaversion="2">
+<suite id="s1" name="validarTestTemplate" source="C:\Users\leona\PycharmProjects\testCaseWithTestTemplate\testCase\validarTestTemplate.robot">
+<test id="s1-t1" name="Scenario Outline 01 - Validar response das informações do produto inserido no jsonServer">
+<kw name="Scenario Outline 01 - Validar response das informações do produto inserido no jsonServer" library="ValidarJsonServer">
+<arg>Coca cola 600ml</arg>
+<arg>7.5</arg>
+<kw name="Dado que leonardo efetuar um get na rota" library="ValidarJsonServer">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220308 22:59:05.427" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220308 22:59:05.427" endtime="20220308 22:59:05.427"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>data</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220308 22:59:05.427" level="INFO">Creating Session using : alias=data, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220308 22:59:05.427" endtime="20220308 22:59:05.427"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>data</arg>
+<arg>${URL}/data</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220308 22:59:05.433" level="INFO">GET Request : url=http://localhost:3000/data 
+ path_url=/data 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg timestamp="20220308 22:59:05.433" level="INFO">GET Response : url=http://localhost:3000/data 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '196', 'Date': 'Wed, 09 Mar 2022 01:59:05 GMT', 'Server': 'Python/3.10 aiohttp/3.8.1'} 
+ body={"produtos": [{"id": "1", "nome": "Coca cola 600ml", "descricao": "", "preco": "7.5", "categoria_id": 2}, {"id": "2", "nome": "Refrigerantes", "descricao": "", "preco": "9.7", "categoria_id": 2}]} 
+ </msg>
+<msg timestamp="20220308 22:59:05.433" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220308 22:59:05.427" endtime="20220308 22:59:05.433"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220308 22:59:05.433" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220308 22:59:05.433" endtime="20220308 22:59:05.433"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.426" endtime="20220308 22:59:05.433"/>
+</kw>
+<kw name="Então é retornado no response" library="ValidarJsonServer">
+<arg>${NOME}</arg>
+<arg>${PRECO}</arg>
+<kw name="Element Should Exist" library="JsonValidator">
+<arg>${RESPOSTA.json()}</arg>
+<arg>.nome:contains("${NOME}")</arg>
+<doc>Check the existence of one or more elements, matching [ http://jsonselect.org/ | JSONSelect] expression.</doc>
+<status status="PASS" starttime="20220308 22:59:05.434" endtime="20220308 22:59:05.434"/>
+</kw>
+<kw name="Element Should Exist" library="JsonValidator">
+<arg>${RESPOSTA.json()}</arg>
+<arg>.preco:contains("${PRECO}")</arg>
+<doc>Check the existence of one or more elements, matching [ http://jsonselect.org/ | JSONSelect] expression.</doc>
+<status status="PASS" starttime="20220308 22:59:05.434" endtime="20220308 22:59:05.435"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.434" endtime="20220308 22:59:05.435"/>
+</kw>
+<kw name="E valido o schema da API" library="ValidarJsonServer">
+<kw name="Validate Jsonschema From File" library="JsonValidator">
+<arg>${RESPOSTA.json()}</arg>
+<arg>C:\\Users\\leona\\PycharmProjects\\testCaseWithTestTemplate\\resource/JsonSchema.json</arg>
+<doc>Validate JSON according to schema, loaded from a file.</doc>
+<status status="PASS" starttime="20220308 22:59:05.435" endtime="20220308 22:59:05.437"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.435" endtime="20220308 22:59:05.437"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.426" endtime="20220308 22:59:05.437"/>
+</kw>
+<kw name="Scenario Outline 01 - Validar response das informações do produto inserido no jsonServer" library="ValidarJsonServer">
+<arg>Refrigerantes</arg>
+<arg>9.7</arg>
+<kw name="Dado que leonardo efetuar um get na rota" library="ValidarJsonServer">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220308 22:59:05.438" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220308 22:59:05.438" endtime="20220308 22:59:05.438"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>data</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220308 22:59:05.438" level="INFO">Creating Session using : alias=data, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220308 22:59:05.438" endtime="20220308 22:59:05.440"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>data</arg>
+<arg>${URL}/data</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220308 22:59:05.442" level="INFO">GET Request : url=http://localhost:3000/data 
+ path_url=/data 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg timestamp="20220308 22:59:05.442" level="INFO">GET Response : url=http://localhost:3000/data 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '196', 'Date': 'Wed, 09 Mar 2022 01:59:05 GMT', 'Server': 'Python/3.10 aiohttp/3.8.1'} 
+ body={"produtos": [{"id": "1", "nome": "Coca cola 600ml", "descricao": "", "preco": "7.5", "categoria_id": 2}, {"id": "2", "nome": "Refrigerantes", "descricao": "", "preco": "9.7", "categoria_id": 2}]} 
+ </msg>
+<msg timestamp="20220308 22:59:05.443" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220308 22:59:05.440" endtime="20220308 22:59:05.443"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220308 22:59:05.443" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220308 22:59:05.443" endtime="20220308 22:59:05.443"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.438" endtime="20220308 22:59:05.443"/>
+</kw>
+<kw name="Então é retornado no response" library="ValidarJsonServer">
+<arg>${NOME}</arg>
+<arg>${PRECO}</arg>
+<kw name="Element Should Exist" library="JsonValidator">
+<arg>${RESPOSTA.json()}</arg>
+<arg>.nome:contains("${NOME}")</arg>
+<doc>Check the existence of one or more elements, matching [ http://jsonselect.org/ | JSONSelect] expression.</doc>
+<status status="PASS" starttime="20220308 22:59:05.443" endtime="20220308 22:59:05.444"/>
+</kw>
+<kw name="Element Should Exist" library="JsonValidator">
+<arg>${RESPOSTA.json()}</arg>
+<arg>.preco:contains("${PRECO}")</arg>
+<doc>Check the existence of one or more elements, matching [ http://jsonselect.org/ | JSONSelect] expression.</doc>
+<status status="PASS" starttime="20220308 22:59:05.444" endtime="20220308 22:59:05.444"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.443" endtime="20220308 22:59:05.444"/>
+</kw>
+<kw name="E valido o schema da API" library="ValidarJsonServer">
+<kw name="Validate Jsonschema From File" library="JsonValidator">
+<arg>${RESPOSTA.json()}</arg>
+<arg>C:\\Users\\leona\\PycharmProjects\\testCaseWithTestTemplate\\resource/JsonSchema.json</arg>
+<doc>Validate JSON according to schema, loaded from a file.</doc>
+<status status="PASS" starttime="20220308 22:59:05.445" endtime="20220308 22:59:05.446"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.444" endtime="20220308 22:59:05.446"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.438" endtime="20220308 22:59:05.446"/>
+</kw>
+<status status="PASS" starttime="20220308 22:59:05.426" endtime="20220308 22:59:05.446"/>
+</test>
+<status status="PASS" starttime="20220308 22:59:05.259" endtime="20220308 22:59:05.447"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="validarTestTemplate">validarTestTemplate</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

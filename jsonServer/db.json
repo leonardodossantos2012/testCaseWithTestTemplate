@@ -1,0 +1,20 @@
+{
+    "data": {
+        "produtos": [
+            {
+                "id": "1",
+                "nome": "Coca cola 600ml",
+                "descricao": "",
+                "preco": "7.5",
+                "categoria_id": 2
+            },
+            {
+                "id": "2",
+                "nome": "Refrigerantes",
+                "descricao": "",
+                "preco": "9.7",
+                "categoria_id": 2
+            }
+        ]
+    }
+}

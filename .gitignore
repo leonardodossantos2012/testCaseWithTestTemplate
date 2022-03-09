@@ -1,0 +1,21 @@
+
+*.py[codx]
+__pycache__/
+.pytest*/
+.coverage
+.mypy_cache/
+
+# C extensions
+*.so
+*.dll
+
+.deploy_cfg
+/opkg_cache/
+/pip_cache/
+networktables.ini
+
+.vscode/
+.idea/
+*.iml
+*.iws
+.DS_Store

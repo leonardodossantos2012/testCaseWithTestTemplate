@@ -1,0 +1,127 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "produtos": [
+                {
+                    "id": "1",
+                    "nome": "Coca cola 600ml",
+                    "descricao": "",
+                    "preco": "7.5",
+                    "categoria_id": 2
+                }
+            ]
+        }
+    ],
+    "required": [
+        "produtos"
+    ],
+    "properties": {
+        "produtos": {
+            "$id": "#/properties/produtos",
+            "type": "array",
+            "title": "The produtos schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "id": "1",
+                        "nome": "Coca cola 600ml",
+                        "descricao": "",
+                        "preco": "7.5",
+                        "categoria_id": 2
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/produtos/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/produtos/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "id": "1",
+                                "nome": "Coca cola 600ml",
+                                "descricao": "",
+                                "preco": "7.5",
+                                "categoria_id": 2
+                            }
+                        ],
+                        "required": [
+                            "id",
+                            "nome",
+                            "descricao",
+                            "preco",
+                            "categoria_id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "$id": "#/properties/produtos/items/anyOf/0/properties/id",
+                                "type": "string",
+                                "title": "The id schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "nome": {
+                                "$id": "#/properties/produtos/items/anyOf/0/properties/nome",
+                                "type": "string",
+                                "title": "The nome schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Coca cola 600ml"
+                                ]
+                            },
+                            "descricao": {
+                                "$id": "#/properties/produtos/items/anyOf/0/properties/descricao",
+                                "type": "string",
+                                "title": "The descricao schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    ""
+                                ]
+                            },
+                            "preco": {
+                                "$id": "#/properties/produtos/items/anyOf/0/properties/preco",
+                                "type": "string",
+                                "title": "The preco schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "7.5"
+                                ]
+                            },
+                            "categoria_id": {
+                                "$id": "#/properties/produtos/items/anyOf/0/properties/categoria_id",
+                                "type": "integer",
+                                "title": "The categoria_id schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    2
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}
