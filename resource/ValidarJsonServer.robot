@@ -22,9 +22,3 @@ Então é retornado no response
 
 E valido o schema da API
     Validate Jsonschema From File	  ${RESPOSTA.json()}   ${CURDIR}/JsonSchema.json
-
-Scenario Outline 01 - Validar response das informações do produto inserido no jsonServer
-    [ARGUMENTS]  ${NOME}  ${PRECO}
-    Dado que leonardo efetuar um get na rota
-    Então é retornado no response  ${NOME}  ${PRECO}
-    E valido o schema da API
