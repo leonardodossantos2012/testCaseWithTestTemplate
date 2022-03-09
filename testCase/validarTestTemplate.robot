@@ -1,5 +1,4 @@
 *** Settings ***
-
 Resource            ../resource/ValidarJsonServer.robot
 
 *** Test Cases ***
