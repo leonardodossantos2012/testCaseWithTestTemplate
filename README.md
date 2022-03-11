@@ -33,7 +33,7 @@ Pronto, o nosso json server foi iniciado e esta pronto para rodar as automaçõe
 
 
 ## Test Template
-O test template trás a facilidade e costumização para colocarmos N validações dentro de um único cenário de teste,
+O test template trás a facilidade e customização para colocarmos N validações dentro de um único cenário de teste,
 no exemplo abaixo será executado duas validações para o mesmo cenário.
 ```robotframework
 ### validarTestTemplate.robot
