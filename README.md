@@ -6,11 +6,10 @@ a library json validator, iremos abordar a utilização do json server para subi
 Os pré-requisitos para rodar o projeto são:
 - IDE configurada(utilizo como default o PyCharm)
 - Instalar o python mais recente
-- Executar as seguintes instalações no seu terminal:
+- executar as seguintes instalações no seu terminal:
     ```sh
-    pip3 install robotframework-requests
-    pip3 install json-server.py
-    pip3 install robotframework-jsonvalidator
+    1 - cd C:\{PATH}\testCaseWithTestTemplate
+    2 - pip3 install -r .\requirements.txt
     ```
 
 ### Subindo a aplicação com o json server
