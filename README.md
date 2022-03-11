@@ -1,6 +1,6 @@
 ### Sobre o projeto
 O projeto de automação de testes tem como objetivo mostrar a funcionalidade do test template e a validação de contratos das APIs usando 
-a library json validator, iremos abordar a utilização do mock server para subirmos nossa aplicação de teste mocada.  
+a library json validator, iremos abordar a utilização do json server para subirmos nossa aplicação de teste mocada.  
 
 ### Instalação
 Os pré-requisitos para rodar o projeto são:
@@ -8,13 +8,13 @@ Os pré-requisitos para rodar o projeto são:
 - Instalar o python mais recente
 - Executar as seguintes instalações no seu terminal:
     ```sh
-    pip install robotframework-requests
-    pip install mock-server
-    pip install robotframework-jsonvalidator
+    pip3 install robotframework-requests
+    pip3 install json-server.py
+    pip3 install robotframework-jsonvalidator
     ```
 
-### Subindo a aplicação com o mock server
-Após a instalação do mock server, abra o terminal na sua máquina e execute os seguintes comandos:
+### Subindo a aplicação com o json server
+Após a instalação do json server, abra o terminal na sua máquina e execute os seguintes comandos:
 ```bash
 1 cd C:\{PATH}\testCaseWithTestTemplate\jsonServer
 2 json-server .\db.json
@@ -30,7 +30,7 @@ Local:  http://localhost:3000
 Remote: http://192.168.0.103:3000
 ====================
 ```
-Pronto, o nosso mock server foi iniciado e esta pronto para rodar as automações.
+Pronto, o nosso json server foi iniciado e esta pronto para rodar as automações.
 
 
 ## Test Template
