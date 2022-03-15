@@ -14,4 +14,4 @@ Template Scenario Outline 01 - Validar response das informações do produto ins
     [ARGUMENTS]  ${NOME}  ${PRECO}
     Dado que leonardo efetuar um get na rota
     Então é retornado no response  ${NOME}  ${PRECO}
-    E valido o schema da API
+#    E valido o schema da API
