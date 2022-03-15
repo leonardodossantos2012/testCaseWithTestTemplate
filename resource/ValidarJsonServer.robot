@@ -17,6 +17,3 @@ Então é retornado no response
     [ARGUMENTS]     ${NOME}  ${PRECO}
     Element should exist    ${RESPOSTA.json()}    .nome:contains("${NOME}")
     Element should exist    ${RESPOSTA.json()}    .preco:contains("${PRECO}")
-#
-#E valido o schema da API
-#    Validate Jsonschema From File	  ${RESPOSTA.json()}   ${CURDIR}/JsonSchema.json
